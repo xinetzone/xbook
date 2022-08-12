@@ -21,3 +21,24 @@ blockquote.epigraph {
 .dfn {
   background-color: rgb(205, 214, 71);
 }
+
+caption {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  color: #61aced;
+  text-align: left;
+  caption-side: top;
+}
+
+.topic {
+  border: 1px solid #ccc;
+  padding: 7px;
+  margin: 10px 0 10px 0;
+}
+
+.topic-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 10px;
+  border-bottom: ridge rebeccapurple;
+}
