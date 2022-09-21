@@ -20,7 +20,7 @@ if sys.platform == 'win32':
     import asyncio
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
-project = 'tvm-book'
+project = 'xbook'
 copyright = '2022, xinetzone'
 author = 'xinetzone'
 
@@ -144,7 +144,7 @@ intersphinx_mapping = {
 
 # ``pydata-sphinx-theme`` 配置
 # Define the json_url for our version switcher.
-json_url = 'https://xinetzone.github.io/tvm-book/_static/switcher.json'
+json_url = 'https://xinetzone.github.io/xbook/_static/switcher.json'
 
 version = release
 
@@ -185,7 +185,7 @@ html_sidebars = {
 
 html_context = {
     "github_user": "xinetzone",
-    "github_repo": "tvm-book",
+    "github_repo": "xbook",
     "github_version": "main",
     "doc_path": "doc",
 }
