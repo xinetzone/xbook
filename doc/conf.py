@@ -158,8 +158,7 @@ autosummary_generate = True
 html_theme_options = {
     "switcher": {
         "json_url": json_url,
-        "version_match": switcher_version,
-        "url_template": "https://pandas.pydata.org/{version}/",
+        "version_match": switcher_version
     },
     "use_edit_page_button": True,
     "show_nav_level": 0,

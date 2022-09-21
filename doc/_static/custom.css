@@ -42,3 +42,7 @@ caption {
   margin-top: 10px;
   border-bottom: ridge rebeccapurple;
 }
+
+.bd-sidebar-primary, .bd-sidebar-secondary {
+  background-color: #e4e7eb;
+}
