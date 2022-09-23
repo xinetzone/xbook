@@ -35,6 +35,7 @@ Home = "https://github.com/xinetzone/xbook"
 [project.optional-dependencies]
 doc = [
   "myst-nb",
+  "xyzstyle",
   "sphinx-copybutton",
   "sphinxcontrib-bibtex",
   "sphinx-thebe",
