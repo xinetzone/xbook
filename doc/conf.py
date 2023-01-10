@@ -160,6 +160,7 @@ html_theme_options = {
         "json_url": json_url,
         "version_match": switcher_version
     },
+    "github_url": "https://github.com/xinetzone/xbook",
     "use_edit_page_button": True,
     "show_nav_level": 0,
     "show_toc_level": 0,
@@ -168,7 +169,7 @@ html_theme_options = {
     "navbar_align": "content", # "right", "left", "content"
     "navbar_start": "navbar-logo.html",
     "navbar_center": "navbar-nav.html",
-    "navbar_end": ["search-field.html", "theme-switcher", "version-switcher", "navbar-icon-links"],
+    "navbar_end": ["theme-switcher", "version-switcher", "navbar-icon-links"],
     "left_sidebar_end": "sidebar-ethical-ads.html",
     "page_sidebar_items": ["page-toc.html", "edit-this-page.html"],
     # "page_sidebar_items": [], # 删除右侧边栏
@@ -179,8 +180,12 @@ html_theme_options = {
 }
 
 html_sidebars = {
-    "*": ["sidebar-nav-bs.html", "sidebar-ethical-ads.html"]
-    # "**": [],
+    "contribute/index": [
+        "search-field",
+        "sidebar-nav-bs",
+        "custom-template",
+    ],  # This ensures we test for custom sidebars
+    "demo/no-sidebar": [],  # Test what page looks like with no sidebar items
 }
 
 html_context = {
