@@ -38,6 +38,7 @@ extensions = [
     'myst_nb',
     'sphinx.ext.intersphinx',
     'sphinx_copybutton',
+    "sphinx_comments",
     'sphinx.ext.autosummary',
     "sphinx.ext.viewcode",
     "sphinxcontrib.bibtex",
