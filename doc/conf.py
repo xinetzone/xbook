@@ -43,7 +43,6 @@ extensions = [
     "sphinxcontrib.bibtex",
     'sphinx.ext.autosectionlabel',
     "sphinx.ext.graphviz",
-    # "sphinx_automodapi.automodapi",
     "sphinx.ext.viewcode",
     "sphinx.ext.napoleon",
     # "sphinx_thebe",
@@ -208,3 +207,12 @@ bibtex_bibfiles = ["note.bib"]
 # To test that style looks good with common bibtex config
 bibtex_reference_style = "author_year"
 graphviz_output_format = 'svg'
+
+comments_config = {
+    "hypothesis": True,
+    "dokieli": False,
+    "utterances": {
+        "repo": "xinetzone/xbook",
+        "optional": "config",
+    }
+}

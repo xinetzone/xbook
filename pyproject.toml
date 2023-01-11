@@ -41,7 +41,8 @@ doc = [
   "sphinx-thebe",
   "sphinx-design",
   "sphinx-automodapi",
-  "sphinx-sitemap"
+  "sphinx-sitemap",
+  "sphinx-comments",
 ]
 
 coverage = [
