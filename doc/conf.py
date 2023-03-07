@@ -170,8 +170,6 @@ html_theme_options = {
     "navbar_start": "navbar-logo.html",
     "navbar_center": "navbar-nav.html",
     "navbar_end": ["theme-switcher", "version-switcher", "navbar-icon-links"],
-    "left_sidebar_end": "sidebar-ethical-ads.html",
-    "page_sidebar_items": ["page-toc.html", "edit-this-page.html"],
     # "page_sidebar_items": [], # 删除右侧边栏
     "footer_start": ["copyright", "sphinx-version"],
     "footer_end": ["last-updated", ],
