@@ -61,9 +61,9 @@ test = [
   "xbook[doc]",
 ]
 
-[project.entry-points]
-"sphinx.html_themes" = {xbook = "xbook"}
+# [project.entry-points]
+# "sphinx.html_themes" = {xbook = "xbook"}
 
 [tool.flit.sdist]
-# include = ["docs/"]
+# include = ["doc/"]
 exclude = ['doc', '.git', '.github']
