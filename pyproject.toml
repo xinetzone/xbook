@@ -12,8 +12,6 @@ requires-python = ">=3.10"
 
 dependencies = [
   "d2py",
-  "attrs",
-  "importlib-metadata>=4.12"
 ]
 
 maintainers = [
@@ -37,7 +35,7 @@ doc = [
   "myst-nb",
   "xyzstyle",
   "sphinx-copybutton",
-  "sphinxcontrib-bibtex",
+  # "sphinxcontrib-bibtex",
   "sphinx-thebe",
   "sphinx-design",
   "sphinx-automodapi",
@@ -55,6 +53,8 @@ dev = [
   "pyyaml",
   "pre-commit",
   "note-demo[coverage]",
+  "attrs",
+  "importlib-metadata>=4.12"
 ]
 test = [
   "pytest",
