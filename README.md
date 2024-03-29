@@ -12,6 +12,8 @@
 [![Downloads][download-badge]][download-link]
 [![Documentation Status][status-badge]][status-link]
 [![PyPI - Downloads][install-badge]][install-link]
+![GitHub top language](https://img.shields.io/github/languages/top/xinetzone/xbook)
+
 
 打造优质的笔记模板。
 
