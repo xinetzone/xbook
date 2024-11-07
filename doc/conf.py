@@ -11,14 +11,14 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 import sys
 from pathlib import Path
-
 ROOT = Path('__file__').resolve().parents[1]
-sys.path.extend([str(ROOT/'src')])
+sys.path.extend([str(ROOT/'src'), str(ROOT/"doc")])
 import xbook
 
 if sys.platform == 'win32':
     import asyncio
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+from utils.icon import icon_links
 
 project = 'xbook'
 copyright = '2022, xinetzone'
@@ -26,7 +26,6 @@ author = 'xinetzone'
 
 # The full version, including alpha/beta/rc tags
 release = xbook.__version__
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -46,7 +45,7 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx.ext.viewcode",
     "sphinx.ext.napoleon",
-    # "sphinx_thebe",
+    "sphinx_thebe",
     "sphinx_sitemap",
     "sphinx_design",
 ]
@@ -123,7 +122,27 @@ html_favicon = '_static/images/favicon.jpg'
 
 html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'
 
+# application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
+# unknown_mime_type - application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
+# domains - sphinx_proof.domain::prf needs to have `resolve_any_xref` method
+# mime_priority - latex priority not set in myst_nb for text/html, application/javascript
+suppress_warnings = [
+    "mystnb.unknown_mime_type", "mystnb.mime_priority",  # 禁用 application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json 警告
+    "myst.xref_missing", "myst.domains", # 禁用 myst 警告
+    "autoapi.python_import_resolution", "autoapi.not_readable" # 禁用 autoapi 警告
+]
 
+thebe_config = {
+    "repository_url": "https://github.com/xinetzone/xbook",
+    "path_to_docs": "doc",
+    "repository_branch": "main",
+    "selector": "div.highlight",
+    # "selector": ".thebe",
+    # "selector_input": "",
+    # "selector_output": "",
+    # "codemirror-theme": "blackboard",  # Doesn't currently work
+    # "always_load": True,  # To load thebe on every page
+}
 
 extlinks = {
     # 'duref': ('https://docutils.sourceforge.io/docs/ref/rst/'
@@ -160,77 +179,37 @@ html_theme_options = {
         "json_url": json_url,
         "version_match": switcher_version
     },
-    "github_url": "https://github.com/xinetzone/xbook",
+    "github_url": html_baseurl,
+    "use_sidenotes": True,
+    "use_source_button": True,
+    "use_download_button": True,
     "use_edit_page_button": True,
-    "show_nav_level": 0,
-    "show_toc_level": 0,
+    "announcement": (
+        "👋欢迎进入编程视界！👋"
+    ),
+    # "launch_buttons": {
+    #     "binderhub_url": "https://mybinder.org",
+    #     "colab_url": "https://colab.research.google.com/",
+    #     "deepnote_url": "https://deepnote.com/",
+    #     "notebook_interface": "jupyterlab",
+    #     "thebe": True,
+    #     # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+    # },
+    # "use_issues_button": True,
+    # "show_nav_level": 0,
+    # "show_toc_level": 0,
     "navigation_with_keys": True,
-    "collapse_navigation": False,
-    "navbar_align": "content", # "right", "left", "content"
-    "navbar_start": "navbar-logo.html",
-    "navbar_center": "navbar-nav.html",
-    "navbar_end": ["theme-switcher", "version-switcher", "navbar-icon-links"],
-    # "page_sidebar_items": [], # 删除右侧边栏
+    "collapse_navigation": True,
+    # "navbar_start": ["navbar-icon-links"],
+    # "navbar_center": ["test.html"],
+    # "navbar_end": ["test.html"],
+    # "navbar_persistent": ["navbar-icon-links",],
     "footer_start": ["copyright", "sphinx-version"],
-    "footer_end": ["last-updated", ],
+    "footer_end": ["last-updated", "theme-switcher", "version-switcher", ],
     # 图标可以参考 https://fontawesome.com/icons
-    "icon_links": [
-        # {
-        #     "name": "GitHub",
-        #     "url": "https://github.com/xinetzone/tvm-book",
-        #     "icon": "fa-brands fa-square-github",
-        #     "type": "fontawesome",
-        # },
-        {
-            "name": "知乎",
-            "url": "https://www.zhihu.com/people/xinetzone",
-            "icon": "fa-brands fa-zhihu",
-            "type": "fontawesome",
-        },
-        {
-            "name": "简书",
-            "url": "https://www.jianshu.com/u/4302480a3e8e",
-            "icon": "fa-solid fa-book",
-            "type": "fontawesome",
-        },
-        {
-            "name": "B站",
-            "url": "https://space.bilibili.com/252192181",
-            "icon": "fa-brands fa-bilibili",
-            "type": "fontawesome",
-        },
-        {
-            "name": "博客园",
-            "url": "https://www.cnblogs.com/q735613050/",
-            "icon": "https://xinetzone.github.io/xinetzone/media/xinetzone.jpg",
-            "type": "url",
-        },
-        {
-            "name": "领英",
-            "url": "https://www.linkedin.com/in/xinet",
-            "icon": "fa-brands fa-linkedin",
-            "type": "fontawesome",
-        },
-        # {
-        #     "name": "GitLab",
-        #     "url": "https://gitlab.com/<your-org>/<your-repo>",
-        #     "icon": "fa-brands fa-square-gitlab",
-        #     "type": "fontawesome",
-        # },
-        # {
-        #     "name": "Twitter",
-        #     "url": "https://twitter.com/<your-handle>",
-        #     "icon": "fa-brands fa-square-twitter",
-        #     # The default for `type` is `fontawesome` so it is not actually required in any of the above examples as it is shown here
-        # },
-        # {
-        #     "name": "Mastodon",
-        #     "url": "https://<your-host>@<your-handle>",
-        #     "icon": "fa-brands fa-mastodon",
-        # },
-    ],
+    "icon_links": icon_links,
     # "use_download_button": True,
-    # "toc_title": "导航",
+    "toc_title": "导航",
     # "single_page": True,
 }
 
@@ -257,7 +236,6 @@ myst_enable_extensions = [
     "dollarmath",
     "html_image",
 ]
-
 
 bibtex_bibfiles = ["note.bib"]
 # To test that style looks good with common bibtex config
