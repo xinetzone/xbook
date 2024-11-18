@@ -45,6 +45,7 @@ doc = [
   "jupyterlite-sphinx",
   "jupyterlite-pyodide-kernel",
   "jupyterlite-xeus",
+  "voici",
 ]
 
 coverage = [
