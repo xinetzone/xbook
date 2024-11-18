@@ -48,7 +48,7 @@ extensions = [
     "sphinx_thebe",
     "sphinx_sitemap",
     "sphinx_design",
-    "jupyterlite_sphinx",
+    # "jupyterlite_sphinx",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -263,6 +263,6 @@ comments_config = {
 }
 
 # jupyterlite_dir = ROOT/"tools/lite/apps"
-jupyterlite_contents = "../tests"
-jupyterlite_bind_ipynb_suffix = False
-jupyterlite_config = "jupyterlite_config.json"
+# jupyterlite_contents = "../tests"
+# jupyterlite_bind_ipynb_suffix = False
+# jupyterlite_config = "jupyterlite_config.json"
