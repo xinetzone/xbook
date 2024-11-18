@@ -41,7 +41,10 @@ doc = [
   "sphinx-automodapi",
   "sphinx-sitemap",
   "sphinx-comments",
-  "invoke"
+  "invoke",
+  "jupyterlite-sphinx",
+  "jupyterlite-pyodide-kernel",
+  "jupyterlite-xeus",
 ]
 
 coverage = [

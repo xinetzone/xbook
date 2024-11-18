@@ -6,7 +6,6 @@
 
 tutorials/index
 topics/index
-chaos/index
 about/index
 ```
 

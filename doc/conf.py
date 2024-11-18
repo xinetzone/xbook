@@ -48,6 +48,7 @@ extensions = [
     "sphinx_thebe",
     "sphinx_sitemap",
     "sphinx_design",
+    "jupyterlite_sphinx",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -63,7 +64,13 @@ language = 'zh_CN'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [
+    '_build', 'Thumbs.db', 
+    '.DS_Store', "_contents", 
+    "**/my_notebook.ipynb",
+    
+]
+execution_excludepatterns = ["**/my_notebook.ipynb", "multigrid", "gym", "tf",]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -158,7 +165,11 @@ extlinks = {
 intersphinx_mapping = {
     'python': ('https://daobook.github.io/cpython/', None),
     'tvm': ('https://daobook.github.io/tvm/', None),
-    "mxnet": ("https://mxnet.incubator.apache.org/versions/1.9.0/api/python/docs", None)
+    "mxnet": ("https://mxnet.incubator.apache.org/versions/1.9.0/api/python/docs", None),
+    "jupyterlite": (
+        "https://jupyterlite.readthedocs.io/en/stable",
+        None,
+    ),
 }
 
 # ``pydata-sphinx-theme`` 配置
@@ -250,3 +261,8 @@ comments_config = {
         "optional": "config",
     }
 }
+
+# jupyterlite_dir = ROOT/"tools/lite/apps"
+jupyterlite_contents = "../tests"
+jupyterlite_bind_ipynb_suffix = False
+jupyterlite_config = "jupyterlite_config.json"
