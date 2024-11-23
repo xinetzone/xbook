@@ -70,9 +70,6 @@ exclude_patterns = [
     "**/my_notebook.ipynb",
     
 ]
-execution_excludepatterns = ["**/my_notebook.ipynb", "multigrid", "gym", "tf",]
-
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -89,12 +86,16 @@ html_css_files = [
 ]
 
 # MyST-NB 设置
+# 参考 https://myst-nb.readthedocs.io/en/latest/computation/execute.html
 # 如果你希望stderr和stdout中的每个输出都被合并成一个流，请使用以下配置。
 # 避免将 jupter 执行报错的信息输出到 cmd
 nb_merge_streams = True
 nb_execution_allow_errors = True
 nb_execution_mode = 'off'
-
+nb_execution_excludepatterns = [
+    "tutorials/jupyterlite/**", 
+    "tutorials/jupyterlite-sphinx/**", 
+]
 nb_mime_priority_overrides = [
     ('html', 'text/plain', 0),  # 最高级别
     ('latex', 'image/jpeg', None),  # 禁用
